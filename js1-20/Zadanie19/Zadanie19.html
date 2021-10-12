@@ -1,0 +1,51 @@
+<html> 
+<head> 
+<title>
+ Przykład obliczenia obowdu i pola prostokata
+</title>
+ <script language="JavaScript">
+function Ob_kowalski(a_kow,b_kow,obw)
+{
+ a_dana_kow=parseFloat(a_kow)
+ b_dana_kow=parseFloat(b_kow)
+ obw=2*a_dana_kow+2*b_dana_kow
+ document.getElementsByName('obj')[0].value=obw.toFixed(2); /* na dokument */
+ alert("Obwod="+obw.toFixed(2)+" cm"); /*do okna Alert */
+ pokaz1.innerHTML="Obwod="+obw.toFixed(2)+" cm"+"<br>";  /* do tabeli */
+}
+function P_kowalski(a_kow,b_kow,pole)
+{
+ a_dana_kow=parseFloat(a_kow)
+ b_dana_kow=parseFloat(b_kow)
+ pole=a_dana_kow*b_dana_kow
+ document.getElementsByName('pole')[0].value=pole.toFixed(2);
+ alert("Pole calkowite="+pole.toFixed(2)+" cm^2");
+ pokaz2.innerHTML="Pole calkowite="+pole.toFixed(2)+"cm^2";
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie obw i pola prostokata
+<br> <br>
+<form name="formularz" action="..." onsubmit="Ob_kowalski(this.bok_a.value,this.bok_b.value); 
+P_kowalski(this.bok_a.value,this.bok_b.value);return false"> 
+Podaj a=
+<input size="6" name="bok_a">
+Podaj b=
+<input size="6" name="bok_b">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Obwod=
+<input size="6" name="obw">
+Pole=
+<input size="6" name="pole">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
