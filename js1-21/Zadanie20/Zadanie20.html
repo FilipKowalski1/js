@@ -1,0 +1,59 @@
+<html> 
+<head> 
+<title>
+ Przyklad obliczenia obwodu i pola trapezu rownoramiennego
+</title>
+ <script language="JavaScript">
+function Pow_kowalski(a,b,h,r,pole)
+{
+ r_kow=parseFloat(r)
+ a_kow=parseFloat(a)
+ b_kow=parseFloat(b)
+ h_kow=parseFloat(h)
+ r=(b_kow-a_kow)/(2*(b_kow-a_kow))/(2+h_kow*h_kow)
+ pole=(a_kow+b_kow)*h_kow/2
+ document.getElementsByName('pole')[0].value=pole.toFixed(2); /* na dokument */
+ alert("Pole="+pole.toFixed(2)+" cm2"); /*do okna Alert */
+ pokaz1.innerHTML="Pole="+pole.toFixed(2)+" cm^2"+"<br>";  /* do tabeli */
+}
+function Obw_kowalski(a,b,h,r,obw)
+{
+ r_kow=parseFloat(r)
+ a_kow=parseFloat(a)
+ b_kow=parseFloat(b)
+ h_kow=parseFloat(h)
+ r_kow=(b_kow-a_kow)/(2*(b_kow-a_kow))/(2+h_kow*h_kow)
+ obw=r_kow+r_kow+a_kow+b_kow
+ document.getElementsByName('obw')[0].value=obw.toFixed(2);
+ alert("Obwod="+obw.toFixed(2)+"cm");
+ pokaz2.innerHTML="Obwod="+obw.toFixed(2)+"cm"+"<br>";
+}
+ </script>
+</head> 
+<body> 
+Obliczanie obwodu i pola trapezu rownoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pow_kowalski(this.bok_a.value,this.bok_b.value,this.wysokosc.value); 
+Obw_kowalski(this.bok_a.value,this.bok_b.value,this.wysokosc.value);return false"> 
+Podstawa a=
+<input size="6" name="bok_a">
+Podstawa b=
+<input size="6" name="bok_b">
+Wysokosc h=
+<input size="6" name="wysokosc">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole=
+<input size="6" name="pole">
+Obwod=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
