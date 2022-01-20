@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<body>
+
+    Odleglosc <input type="number" id="odleglosc"><br>
+    Droga <input type="number" id="droga"><br>
+
+    <button onclick="javascript: oblicz()">Oblicz</button>
+    <div id="kat_kow"></div>
+    <div id="h_kow"></div>
+
+    <script>
+        function oblicz(){
+            var a = document.getElementById('odleglosc').value;
+            var b = document.getElementById('droga').value;
+
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            var h_kow = (b * b) - (a * a);
+            h_kow = Math.sqrt(h_kow);
+            var c = h_kow / a;
+            c = Math.atan(c);
+            var kat_kow = c * 180 / 3.14;
+
+            document.getElementById('kat_kow').innerText = 'Kąt= ' + kat_kow;
+            document.getElementById('h_kow').innerText = 'Wysokość= ' + h_kow;
+        }
+    </script>
+</body>
+</html>
