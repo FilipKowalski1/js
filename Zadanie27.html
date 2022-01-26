@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script type="text/javascript">
+    var samochod_kowalski = {
+    silnik: '2.0 diesel',
+    rokprodukcji: '2010',
+    maxpredkosc: '190 km/h',
+            pokaz: function () {
+                document.write(this.silnik + ' ' + this.rokprodukcji)
+    }
+}
+samochod_kowalski.pokaz();
+samochod_kowalski.maxpredkosc=190;
+samochod_kowalski.wypisz=function() {
+    alert('Maksymalna predkosc: ' + this.maxpredkosc)
+    }
+samochod_kowalski.wypisz();
+</script>
+</head>
+<body>
+<br>
+programowanie obiektowe
+</body>
+</html>
